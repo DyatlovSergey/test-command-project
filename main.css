@@ -1,66 +1,90 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .section-header {
   background-image: url(./img/bg_header.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  max-width: 320px;
 }
 
-.header {
+.container {
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
-  display: flex;
-  flex-direction: column;
-  max-width: 320px;
-  height: 230px;
-  background-image: url(./img/bg_header.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
-.header-nav {
-  display: flex;
-  flex-direction: row;
+.header {
+  position: relative;
 }
 
-.header-nav__links {
-  list-style: none;
+.logo {
+  /* position: absolute;
+  top: 10px;
+  left: 20px; */
+  display: inline-flex;
+}
+.header-nav__items {
   display: flex;
+  justify-content: flex-end;
   flex-direction: row;
-  font-family: Roboto;
-  font-style: normal;
+  margin-top: 58px;
+}
+
+.header-nav__item:not(:last-child) {
+  margin-right: 39px;
+}
+
+.header-nav__link {
+  position: relative;
+
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
-
   text-transform: uppercase;
-
   color: #ffffff;
-
-  margin-top: 48px;
 }
 
-.header-nav__links li {
-  position: relative;
-  margin-right: 40px;
-}
-.header-nav__links li::after {
+.header-nav__link::after {
   position: absolute;
   left: 0;
-  bottom: 0px;
+  bottom: -3px;
   content: "";
   display: block;
   width: 100%;
   height: 3px;
 
   background-color: #ff6b08;
-  opacity: 1;
+  opacity: 0;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-nav__input {
+.header-nav__link--current::after {
+  opacity: 1;
+}
+
+.header-input {
+  display: flex;
+  margin-top: 40px;
+  border-bottom: 1px #ffffff solid;
+  justify-content: space-between;
+}
+
+.input {
   display: block;
   justify-content: center;
   align-items: center;
@@ -68,11 +92,19 @@
   font-size: 14px;
   line-height: 16px;
   border: none;
-  border-bottom: 1px #ffffff solid;
-  align-items: center;
-  margin-bottom: 40px;
 }
 
-.header-nav__input::placeholder {
+.input::placeholder {
   color: #ffffff;
+}
+
+.error {
+  font-size: 14px;
+  line-height: 16px;
+  color: #ff001b;
+  opacity: 1;
+}
+
+.is-hidden {
+  opacity: 0;
 }
