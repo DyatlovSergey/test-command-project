@@ -1,6 +1,6 @@
 body {
-  padding: 0;
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
@@ -14,18 +14,22 @@ ul {
 }
 
 .section-header {
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   background-image: url(./img/logo_mob_1x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  max-width: 320px;
+  width: 100%;
 }
 
-@media screen and (min-width: 320px) {
+/* @media screen and (min-width: 320px) {
   .section-header {
     max-width: 320px;
   }
-}
+} */
 
 @media screen and (min-width: 768px) {
   .section-header {
@@ -37,7 +41,7 @@ ul {
 @media screen and (min-width: 1200px) {
   .section-header {
     max-width: 1200px;
-    background-image: url(./img/logo-big.jpg);
+    background-image: url(./img/logo-big_1x.jpg);
   }
 }
 
@@ -49,17 +53,45 @@ ul {
   padding-right: 20px;
 }
 
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 71px;
+    padding-right: 71px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 .header {
-  
   position: relative;
+  width: 100%;
 }
 
 .logo {
   position: absolute;
   top: 46px;
   left: 0px;
-  
 }
+
+.logo-text {
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-text {
+    display: none;
+  }
+}
+
 .header-nav__items {
   display: flex;
   justify-content: flex-end;
@@ -120,6 +152,15 @@ ul {
   color: #ffffff;
 }
 
+.button {
+  display: flex;
+  background-image: url(./img/search.svg);
+  background-color: transparent;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .error {
   font-size: 14px;
   line-height: 16px;
